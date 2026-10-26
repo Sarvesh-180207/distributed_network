@@ -1,0 +1,97 @@
+DISTRIBUTED COMMUNICATION NETWORK MODEL
+========================================
+
+Sample Output
+-------------
+
+1. UNICAST (ONE-TO-ONE COMMUNICATION)
+-------------------------------------
+Choose an option: 1
+Available nodes: A, B, C, D
+Sender node: A
+Receiver node: B
+Enter message: Hello Node B
+
+[UNICAST] A -> B
+Message: Hello Node B
+Time: 10:15:01
+
+Choose an option: 5
+Available nodes: A, B, C, D
+Node to receive messages: B
+
+B received a message
+From: A
+Type: UNICAST
+Content: Hello Node B
+
+
+2. BROADCAST (ONE-TO-ALL COMMUNICATION)
+---------------------------------------
+Choose an option: 2
+Available nodes: A, B, C, D
+Sender node: A
+Broadcast message: Network announcement
+
+[BROADCAST] A -> B
+Message: Network announcement
+
+[BROADCAST] A -> C
+Message: Network announcement
+
+[BROADCAST] A -> D
+Message: Network announcement
+
+Result: Nodes B, C, and D each have the broadcast message in their inbox.
+
+
+3. MULTICAST (ONE-TO-SELECTED-GROUP COMMUNICATION)
+--------------------------------------------------
+Choose an option: 3
+Available nodes: A, B, C, D
+Sender node: A
+Enter receiver nodes separated by commas: B,D
+Multicast message: Group update
+
+[MULTICAST] A -> B
+Message: Group update
+
+[MULTICAST] A -> D
+Message: Group update
+
+Result: Only Nodes B and D receive the multicast message.
+
+
+4. REQUEST-REPLY COMMUNICATION
+------------------------------
+Choose an option: 4
+Available nodes: A, B, C, D
+Requesting node: A
+Service node: B
+Enter request: Get server status
+
+[REQUEST] A -> B
+Message: Get server status
+
+B received a message
+From: A
+Type: REQUEST
+Content: Get server status
+
+[REPLY] B -> A
+Message: Reply to your request: Get server status
+
+A received a message
+From: B
+Type: REPLY
+Content: Reply to your request: Get server status
+
+
+CONCLUSION
+----------
+The program simulates four nodes and demonstrates unicast, broadcast,
+multicast, request-reply, and inbox-based message delivery.
+
+Note: This is illustrative sample output. Timestamps and prompt formatting
+will vary when the Python program is run. The program simulates communication
+inside one Python process; it does not send real network packets.
